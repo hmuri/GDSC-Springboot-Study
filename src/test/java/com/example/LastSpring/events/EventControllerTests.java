@@ -1,6 +1,7 @@
 package com.example.LastSpring.events;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,11 @@ import org.springframework.hateoas.MediaTypes;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.time.LocalDateTime;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -19,12 +24,28 @@ public class EventControllerTests {
     @Autowired
     MockMvc mockMvc;
 
+    @Autowired
+    ObjectMapper objectMapper;
+
     @Test
     public void createEvent() throws Exception {
-        mockMvc.perform(post("/api/events/")
-                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+        Event event = Event.builder()
+                .name("Spring")
+                .description("REST API Development with Spring")
+                .beginEnrollmentDateTime(LocalDateTime.of(2018, 11, 22, 4, 15))
+                .closeEnrollmentDateTime(LocalDateTime.of(2023,11,22,4,16))
+                .endEventDateTime(LocalDateTime.of(2018, 11, 23, 5, 15))
+                .basePrice(100)
+                .maxPrice(200)
+                .location("경기도 고양시 일산서구")
+                .build();
+        mockMvc.perform(post("/api/events")
+                        .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaTypes.HAL_JSON)
-                        )
-                .andExpect(status().isCreated());
+                        .content(objectMapper.writeValueAsString(event))
+                )
+                .andDo(print())
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("id").exists());
     }
 }
