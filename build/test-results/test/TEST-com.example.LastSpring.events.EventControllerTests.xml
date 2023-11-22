@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.LastSpring.events.EventControllerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-22T07:31:28" hostname="Minjuui-MacBookAir.local" time="0.757">
+<testsuite name="com.example.LastSpring.events.EventControllerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-22T07:53:08" hostname="Minjuui-MacBookAir.local" time="0.137">
   <properties/>
-  <testcase name="createEvent" classname="com.example.LastSpring.events.EventControllerTests" time="0.757"/>
-  <system-out><![CDATA[16:31:27.916 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.LastSpring.events.EventControllerTests]: EventControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-16:31:27.997 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.LastSpring.LastSpringApplication for test class com.example.LastSpring.events.EventControllerTests
+  <testcase name="createEvent" classname="com.example.LastSpring.events.EventControllerTests" time="0.137"/>
+  <system-out><![CDATA[16:53:07.024 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.LastSpring.events.EventControllerTests]: EventControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:53:07.109 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.LastSpring.LastSpringApplication for test class com.example.LastSpring.events.EventControllerTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,19 +13,19 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.5)
 
-2023-11-22T16:31:28.228+09:00  INFO 28250 --- [    Test worker] c.e.L.events.EventControllerTests        : Starting EventControllerTests using Java 20.0.2.1 with PID 28250 (started by minjuchoi in /Users/minjuchoi/Desktop/Coding/spring/GDSC-Springboot-Study)
-2023-11-22T16:31:28.231+09:00  INFO 28250 --- [    Test worker] c.e.L.events.EventControllerTests        : No active profile set, falling back to 1 default profile: "default"
-2023-11-22T16:31:28.780+09:00  INFO 28250 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-11-22T16:31:28.780+09:00  INFO 28250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-11-22T16:31:28.781+09:00  INFO 28250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-11-22T16:31:28.798+09:00  INFO 28250 --- [    Test worker] c.e.L.events.EventControllerTests        : Started EventControllerTests in 0.752 seconds (process running for 1.354)
+2023-11-22T16:53:07.335+09:00  INFO 29010 --- [    Test worker] c.e.L.events.EventControllerTests        : Starting EventControllerTests using Java 20.0.2.1 with PID 29010 (started by minjuchoi in /Users/minjuchoi/Desktop/Coding/spring/GDSC-Springboot-Study)
+2023-11-22T16:53:07.336+09:00  INFO 29010 --- [    Test worker] c.e.L.events.EventControllerTests        : No active profile set, falling back to 1 default profile: "default"
+2023-11-22T16:53:08.673+09:00  INFO 29010 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-22T16:53:08.674+09:00  INFO 29010 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-22T16:53:08.675+09:00  INFO 29010 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-11-22T16:53:08.699+09:00  INFO 29010 --- [    Test worker] c.e.L.events.EventControllerTests        : Started EventControllerTests in 1.533 seconds (process running for 2.2)
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /api/events
        Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/hal+json", Content-Length:"364"]
-             Body = {"id":null,"name":"Spring","description":"REST API Development with Spring","beginEnrollmentDateTime":"2018-11-22T04:15:00","closeEnrollmentDateTime":"2023-11-22T04:16:00","beginEventDateTime":null,"endEventDateTime":"2018-11-23T05:15:00","location":"경기도 고양시 일산서구","basePrice":100,"maxPrice":200,"offline":false,"free":false,"eventStatus":null}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Accept:"application/hal+json", Content-Length:"362"]
+             Body = {"id":10,"name":"Spring","description":"REST API Development with Spring","beginEnrollmentDateTime":"2018-11-22T04:15:00","closeEnrollmentDateTime":"2023-11-22T04:16:00","beginEventDateTime":null,"endEventDateTime":"2018-11-23T05:15:00","location":"경기도 고양시 일산서구","basePrice":100,"maxPrice":200,"offline":false,"free":false,"eventStatus":null}
     Session Attrs = {}
 
 Handler:
@@ -50,11 +50,11 @@ FlashMap:
 MockHttpServletResponse:
            Status = 201
     Error message = null
-          Headers = [Location:"http://localhost/api/events/%7Bid%7D", Content-Type:"application/hal+json"]
+          Headers = [Location:"http://localhost/api/events/10", Content-Type:"application/hal+json"]
      Content type = application/hal+json
              Body = {"id":10,"name":"Spring","description":"REST API Development with Spring","beginEnrollmentDateTime":"2018-11-22T04:15:00","closeEnrollmentDateTime":"2023-11-22T04:16:00","beginEventDateTime":null,"endEventDateTime":"2018-11-23T05:15:00","location":"ê²½ê¸°ë]]>&#x8f;<![CDATA[]]>&#x84;<![CDATA[ ê³ ì]]>&#x96;<![CDATA[]]>&#x91;<![CDATA[ì]]>&#x8b;<![CDATA[]]>&#x9c;<![CDATA[ ì]]>&#x9d;<![CDATA[¼ì]]>&#x82;<![CDATA[°ì]]>&#x84;<![CDATA[]]>&#x9c;<![CDATA[êµ¬","basePrice":100,"maxPrice":200,"offline":false,"free":false,"eventStatus":null}
     Forwarded URL = null
-   Redirected URL = http://localhost/api/events/%7Bid%7D
+   Redirected URL = http://localhost/api/events/10
           Cookies = []
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

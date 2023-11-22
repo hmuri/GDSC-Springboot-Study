@@ -1,11 +1,15 @@
 package com.example.LastSpring.events;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Builder @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter @EqualsAndHashCode(of="id")
+@Entity
 public class Event {
     private Integer id;
     private String name;
@@ -19,5 +23,6 @@ public class Event {
     private int maxPrice;
     private boolean offline;
     private boolean free;
+    @Enumerated(EnumType.STRING)
     private EventStatus eventStatus;
 }
